@@ -16,14 +16,21 @@ let Hero = () => {
     </div>
   )
 }
-let Turn = ({authors, books}) =>{
+let Book= ({title}) =>{
+  return(
+    <div className="answer">
+      <h1>{title}</h1>
+    </div>
+  )
+}
+function Turn ({author, books}){
   return(
     <div className='row turn' style={{ backgroundColor: "white"}}>
     <div className='col-4 offset-1'>
-      <img src={authors.imageUrl} className='authorimage' alt='Author' />
+      <img src={author.imageUrl} className='authorimage' alt='Author' />
     </div>
     <div className='col-6'>
-      {books.map((titel)=> <p>{title}</p>)}
+      {books.map((title)=> <Book title={title} key={title} />)}
     </div>
 
     </div>
@@ -50,22 +57,20 @@ let Footer = () =>{
 
 }
 
-class AuthorQuiz extends Component {  
-  render() {
+ function AuthorQuiz ({turnData}) {  
+ 
     return (
-    <React.Fragment>
+
       <div className="container-fluid">
         <Hero />
-        <Turn />
+        <Turn {...turnData} />
         <Continue />
-        <Footer />
-
-        
+        <Footer />       
       
       </div>
-    </React.Fragment>
+ 
     );
-  }
+  
 }
 
-export default AuthorQuiz;
+ export default AuthorQuiz;

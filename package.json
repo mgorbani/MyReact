@@ -8,7 +8,8 @@
     "react-bootstrap": "^0.32.4",
     "react-dom": "^16.5.2",
     "react-proptypes": "^1.0.0",
-    "react-scripts": "1.1.5"
+    "react-scripts": "1.1.5",
+    "underscore": "^1.9.1"
   },
   "scripts": {
     "start": "react-scripts start",
