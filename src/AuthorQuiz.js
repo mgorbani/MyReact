@@ -6,13 +6,9 @@ let Hero = () => {
   return(
     <div className="row">
       <div className="jumbotron col-10 offset-1">
-
         <h1>Author Quiz</h1>
         <p>select the book written by the autor shown</p>
-
-      </div>
-
-    
+      </div>   
     </div>
   )
 }
@@ -47,7 +43,7 @@ let Footer = () =>{
     <div className='row' id='footer'>
       <div className='col-12'>
         <p className='text-muted credit'>
-        All images are from <a href='http://commons.wikimedia.org/wiki'>Wiki Media
+            All images are from <a href='http://commons.wikimedia.org/wiki'>Wiki Media
         </a>
         </p>
       
@@ -55,6 +51,21 @@ let Footer = () =>{
     </div>
   )
 
+}
+function Events(props){
+  const onClickHandler =(e) => {
+  //  e.persist();
+    console.log(e)
+    
+ 
+    //console.log(synthEvent)
+
+  }
+
+  return(
+    // <button onClick={onClickHandler} value="Make an event">Make an event</button>
+    <input type='checkbox' onClick={(e)=>{}}></input>
+  )
 }
 
  function AuthorQuiz ({turnData}) {  
@@ -65,7 +76,8 @@ let Footer = () =>{
         <Hero />
         <Turn {...turnData} />
         <Continue />
-        <Footer />       
+        <Footer />
+        <Events />      
       
       </div>
  
