@@ -5,19 +5,7 @@ import AuthorQuiz from './AuthorQuiz';
 import registerServiceWorker from './registerServiceWorker';
 import {shuffle, min, filter, sample,  map, first} from 'underscore';
 
-// const authors=
-// [
-//     {
-//         name: 'Mark Twain',
-//         imageUrl: 'images/authors/marktwain.jpg',
-//         imageSource: 'Winkimedia Commons',
-//         books: [
-//             'The Adventures of Hukerberry Finn',
-//             'Life on the Mississipi',
-//             'Roughing It'
-//         ]
-//     }
-// ];
+
 
 const authors = [
     {
@@ -81,9 +69,7 @@ let getTurnData =(authors) =>{
     }
 }
 const state ={
-
-    turnData:getTurnData(authors)
- 
+    turnData:getTurnData(authors) 
 }
 
 ReactDOM.render(<AuthorQuiz {...state} />, document.getElementById('root'));
