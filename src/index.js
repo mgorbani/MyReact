@@ -9,6 +9,10 @@ import {shuffle, sample} from 'underscore';
 import AddAuthorForm from './AddAuthorForm'
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> fbabad9b485fda771b8d452ab814cb6903fd5c4e
 
 const authors = [
     {
@@ -69,6 +73,7 @@ let getTurnData =(authors) =>{
 };
 
 const state ={
+<<<<<<< HEAD
     turnData:getTurnData(authors),
     hightlight: '',
     notAnnat: 'hej och hoj'
@@ -101,6 +106,9 @@ function render(){
   
   , document.getElementById('root'));
 
+=======
+    turnData:getTurnData(authors) 
+>>>>>>> fbabad9b485fda771b8d452ab814cb6903fd5c4e
 }
 
 render();
