@@ -1,10 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+import {BrowserRouter, Route} from 'react-router-dom'
 import AuthorQuiz from './AuthorQuiz';
 import registerServiceWorker from './registerServiceWorker';
 // import {shuffle, min, filter, sample,  map, first} from 'underscore';
 import {shuffle, sample} from 'underscore';
+import AddAuthorForm from './AddAuthorForm'
+
 
 
 const authors = [
@@ -76,12 +79,28 @@ function onClickAnswer(val){
 
   state.hightlight = isCorrect ? 'correct' : 'wrong';
  render();
+}
+function App(){
+  return(
+    <AuthorQuiz {...state} onClickAnswer={onClickAnswer} />
 
 
-
+  )
 }
 function render(){
-  ReactDOM.render(<AuthorQuiz {...state} onClickAnswer={onClickAnswer} />, document.getElementById('root'));
+  ReactDOM.render(
+   
+ 
+    <BrowserRouter>
+      <React.Fragment>
+        <Route exact path="/" component={App} />
+        <Route exact path="/Add" component={AddAuthorForm} />
+      </React.Fragment>
+    </BrowserRouter>
+  
+  
+  , document.getElementById('root'));
+
 }
 
 render();

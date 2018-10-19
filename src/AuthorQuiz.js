@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './App.css';
 import './bootstrap.min.css';
 
@@ -63,22 +63,6 @@ let Continue = ()=>{
       
       </div>
     </div>
-  )
-
-}
-function Events(props){
-  const onClickHandler =(e) => {
-  //  e.persist();
-    console.log(e)
-    
- 
-    //console.log(synthEvent)
-
-  }
-
-  return(
-    // <button onClick={onClickHandler} value="Make an event">Make an event</button>
-    <input type='checkbox' onClick={(e)=>{}}></input>
   )
 }
 
