@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 
-import {BrowserRouter, Route} from 'react-router-dom'
+import {BrowserRouter, Route, withRouter} from 'react-router-dom'
 import AuthorQuiz from './AuthorQuiz';
 import registerServiceWorker from './registerServiceWorker';
 // import {shuffle, min, filter, sample,  map, first} from 'underscore';
@@ -55,9 +55,7 @@ let getTurnData =(authors) =>{
         return p.concat(c.books)
     }, []);   
     const fourRandomBooks= shuffle( allBooks).slice(0, 4);
-    // console.log(filter([1, 2, 3, 4, 5, 6], function(num){ return num % 2 === 0; }));
-    // console.log(map([[1, 2], [3, 4]], first));
-    // console.log("sample: "+sample([1, 2, 3, 4, 5, 6], 3));   
+    
     const answer=sample(fourRandomBooks);
     return {
         books: fourRandomBooks,
@@ -84,10 +82,17 @@ function onClickAnswer(val){
 function App(){
   return(
     <AuthorQuiz {...state} onClickAnswer={onClickAnswer} />
-
-
   )
 }
+
+const AuthorWrapper=withRouter(({history})=>
+
+  <AddAuthorForm onAddAuthor={(author) =>{
+    authors.push(author);
+    history.push('/')
+  }} />
+);
+
 function render(){
   ReactDOM.render(
    
@@ -95,7 +100,7 @@ function render(){
     <BrowserRouter>
       <React.Fragment>
         <Route exact path="/" component={App} />
-        <Route exact path="/Add" component={AddAuthorForm} />
+        <Route exact path="/Add" component={AuthorWrapper} />
       </React.Fragment>
     </BrowserRouter>
   
