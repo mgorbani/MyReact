@@ -1,6 +1,9 @@
 import React from 'react';
 import './App.css';
 import './bootstrap.min.css';
+import {Link} from "react-router-dom"
+
+
 
 let Hero = () => {
   return(
@@ -74,6 +77,7 @@ let Continue = ()=>{
         <Hero />
         <Turn {...turnData} hightlight={hightlight} onClickAnswer={onClickAnswer}  />
         <Continue />
+        <p><Link to="/Add" >Add an Author</Link></p>
         <Footer notAnnat={notAnnat}/>
          
       

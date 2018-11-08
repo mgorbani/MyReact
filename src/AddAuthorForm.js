@@ -4,10 +4,11 @@ class AddAuthorForm extends React.Component {
   render() {
     return (
       <div>
-          hell        
+          <h1>Add Author</h1>   
+          <p>{JSON.stringify.apply()}</p>    
       </div>
     )
-    
+
   }
 }
 

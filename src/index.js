@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+
 import {BrowserRouter, Route} from 'react-router-dom'
 import AuthorQuiz from './AuthorQuiz';
 import registerServiceWorker from './registerServiceWorker';
@@ -8,11 +9,6 @@ import registerServiceWorker from './registerServiceWorker';
 import {shuffle, sample} from 'underscore';
 import AddAuthorForm from './AddAuthorForm'
 
-
-<<<<<<< HEAD
-=======
-
->>>>>>> fbabad9b485fda771b8d452ab814cb6903fd5c4e
 
 const authors = [
     {
@@ -73,7 +69,7 @@ let getTurnData =(authors) =>{
 };
 
 const state ={
-<<<<<<< HEAD
+
     turnData:getTurnData(authors),
     hightlight: '',
     notAnnat: 'hej och hoj'
@@ -106,9 +102,7 @@ function render(){
   
   , document.getElementById('root'));
 
-=======
-    turnData:getTurnData(authors) 
->>>>>>> fbabad9b485fda771b8d452ab814cb6903fd5c4e
+
 }
 
 render();
